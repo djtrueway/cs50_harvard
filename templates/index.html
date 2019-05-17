@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  finance
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped" style="width: 100%">
+  <thead>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>share </th>
+        <th>Price</th>
+        <th>TOTAL</th>
+      </tr>
+  </thead>
+    <tbody>
+    <tr>
+      <td > CASH </td>
+      <td></td
+      <td></td>
+      <td></td>
+      <td></td>
+      {% for total in cash %}
+      <td> {{ total.cash | usd }}</td>
+      {% endfor %}
+    </tr>
+      {% for user in histories %}
+    <tr>
+        <td>{{ user.symbol }}</td>
+        <td> {{ user.name }}</td>
+        <td>{{ user.quantity }} </td>
+        <td>{{ user.prix }}</td>
+        <td>{{ user.total }}</td>
+    </tr>
+          {% endfor %}
+  </tbody>
+    <tfoot>
+      <tr>
+         <td colspan="4"></td>
+         <td><b>$10,000.00</td>
+       </tr>
+   </tfoot>
+</table>
+{% endblock %}
